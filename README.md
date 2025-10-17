@@ -13,7 +13,7 @@ Don't know when I will release because I am busy, but in a while.
 
 # Detection
 
-Unless I can find a client bypass this will most likely be detected but who cares.
+Unless I can develop a client bypass this will most likely be detected but who cares.
 This was mainly just as a simple project rather than something I want to make money from.
 
 # Installation
