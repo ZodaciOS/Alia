@@ -16,7 +16,7 @@ jobs:
 
     - name: Compile dylib
       run: |
-        clang -dynamiclib -framework Cocoa HiWindow.m -o libhi.dylib
+        clang -dynamiclib -framework Cocoa example.m -o libhi.dylib
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
