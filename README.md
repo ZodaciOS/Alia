@@ -9,6 +9,7 @@ Don't know when I will release because I am busy, but in a while.
 
 - Full UNC & sUNC support
 - Keyless, ad-free
+- ScriptBlox API support
 
 **Official Website: https://get-alia.com**
 
