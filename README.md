@@ -11,4 +11,5 @@ Don't know when I will release because I am busy, but in a while.
 - Keyless, ad-free
 
 **Official Website: https://get-alia.com**
-*Once officialy released, source-code will be here.*
+
+*Once officialy released, source-code will be here on this repo.*
