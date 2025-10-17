@@ -14,11 +14,14 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Build dylib
-      run: |
-        mkdir -p build
-        clang -dynamiclib -framework UIKit -arch arm64 \
-              example.m -o build/example.dylib \
-              -isysroot $(xcrun --sdk iphoneos --show-sdk-path)
+    run: |
+      mkdir -p build
+      clang -dynamiclib -arch arm64 \
+          -fobjc-arc -fobjc-link-runtime \
+          -framework UIKit -framework Foundation \
+          -isysroot $(xcrun --sdk iphoneos --show-sdk-path) \
+          example.m -o build/example.dylib
+
 
     - name: Upload dylib
       uses: actions/upload-artifact@v4
