@@ -22,9 +22,9 @@ This was mainly just as a simple project rather than something I want to make mo
 
 Alia supports several installation methods.
 
-- **.deb /** For jailbroken devices. This will inject into libalia.dylib com.roblox.robloxmobile
+- **.deb /** For jailbroken devices. This will inject `libalia.dylib` into com.roblox.robloxmobile
 - **.dylib /** For jailbroken & jailed devices. Jailbroken devices can use tweaks to manually inject into existing apps, or jailed devices can use signing apps to inject. Requires your own decrypted Roblox .ipa.
-- **.ipa /** For jailbroken & jailed devices. Sideload like any other third-party application. Contains libalia.dylib already injected.
+- **.ipa /** For jailbroken & jailed devices. Sideload like any other third-party application. Contains `libalia.dylib` already injected.
 - **.tipa /** For devices with TrollStore. 
 
 **Official Website: https://get-alia.com**
