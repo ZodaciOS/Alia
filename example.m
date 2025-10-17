@@ -27,11 +27,13 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    initialTouchPoint = [[touches anyObject] locationInWindow];
+    UITouch *touch = (UITouch *)[touches anyObject];
+    initialTouchPoint = [touch locationInView:self];
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    CGPoint currentPoint = [[touches anyObject] locationInWindow];
+    UITouch *touch = (UITouch *)[touches anyObject];
+    CGPoint currentPoint = [touch locationInView:self];
     CGPoint offset = CGPointMake(currentPoint.x - initialTouchPoint.x, currentPoint.y - initialTouchPoint.y);
     CGRect frame = self.frame;
     frame.origin.x += offset.x;
