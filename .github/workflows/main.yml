@@ -1,10 +1,9 @@
-name: Build macOS dylib
+name: Build iOS dylib
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -12,14 +11,17 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
-    - name: Compile dylib
+    - name: Build dylib
       run: |
-        clang -dynamiclib -framework Cocoa example.m -o libhi.dylib
+        mkdir -p build
+        clang -dynamiclib -framework UIKit -arch arm64 \
+              example.m -o build/example.dylib \
+              -isysroot $(xcrun --sdk iphoneos --show-sdk-path)
 
-    - name: Upload artifact
+    - name: Upload dylib
       uses: actions/upload-artifact@v4
       with:
-        name: hi-dylib
-        path: libhi.dylib
+        name: example-ios-dylib
+        path: build/example.dylib
