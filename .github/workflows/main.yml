@@ -2,30 +2,31 @@ name: Build iOS dylib
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main
+  workflow_dispatch: {}
 
 jobs:
   build:
     runs-on: macos-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up build directory
-      run: mkdir -p build
+      - name: Set up build directory
+        run: mkdir -p build
 
-    - name: Build example.dylib for iOS
-      run: |
-        clang -dynamiclib -arch arm64 \
-              -fobjc-arc -fobjc-link-runtime \
-              -framework UIKit -framework Foundation \
-              -isysroot $(xcrun --sdk iphoneos --show-sdk-path) \
-              example.m -o build/example.dylib
+      - name: Build example.dylib for iOS
+        run: |
+          clang -dynamiclib -arch arm64 \
+                -fobjc-arc -fobjc-link-runtime \
+                -framework UIKit -framework Foundation \
+                -isysroot $(xcrun --sdk iphoneos --show-sdk-path) \
+                example.m -o build/example.dylib
 
-    - name: Upload dylib artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: example-ios-dylib
-        path: build/example.dylib
+      - name: Upload dylib artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: example-ios-dylib
+          path: build/example.dylib
