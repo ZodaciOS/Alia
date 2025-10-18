@@ -31,4 +31,4 @@ Alia supports several installation methods.
 
 *Once officialy released, source-code will be here on this repo.*
 
-all the code you see in this repo and workflows are just me testing github actions
+all the code you see in this repo and workflows are just me testing github actions. ignore it 
